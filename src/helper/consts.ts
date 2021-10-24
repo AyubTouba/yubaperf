@@ -10,5 +10,6 @@ export const enum ERR {
     NAME_NOT_FOUND = "Should set the perfom's name ", 
     NAME_NOT_EXIST = "there's no perfom with this name",
     START_NOT_DECLANCHED = "the perfom doesn't start yet",
-    END_NOT_DECLANCHED = "the perfom doesn't end yet"
+    END_NOT_DECLANCHED = "the perfom doesn't end yet",
+    DOESNT_PASS_ARRAY_OF_FUNCS = "Should pass an Array of functions",
 }
