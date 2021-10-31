@@ -13,3 +13,7 @@ export const enum ERR {
     END_NOT_DECLANCHED = "the perfom doesn't end yet",
     DOESNT_PASS_ARRAY_OF_FUNCS = "Should pass an Array of functions",
 }
+
+export const PATH_DATA_FILE = `${process.cwd()}/perf/data.js`;
+export const PATH_FOLDER_ROOT_PROJECT = `${process.cwd()}/perf`;
+export const PATH_FOLDER_CHART_GENERATED=  `${__dirname}/../../perf`;

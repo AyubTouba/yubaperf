@@ -10,14 +10,15 @@ export class Measure {
         this.name = name ;
     }
 
-    start(){
+    start() : void {
       this.startTime = process.hrtime.bigint();
     }
 
-    end(){
+    end() : void {
        this.endTime = process.hrtime.bigint();
     }
-    result(parser=true){
+
+    result(parser=true) : bigint | string {
         if(!this.startTime) throw Error(ERR.START_NOT_DECLANCHED);
         if(!this.endTime) throw Error(ERR.END_NOT_DECLANCHED);
         
@@ -25,7 +26,7 @@ export class Measure {
         return  parser ?  Measure.convertHrtime(resultTime) : resultTime;
     }
 
-   static convertHrtime(hrtime) {
+   static convertHrtime(hrtime) : string {
         const nanoseconds = hrtime;
         const number = Number(nanoseconds);
         const milliseconds = number / 1000000;
