@@ -43,8 +43,8 @@ console.log(perf.result("Algorithm1"));
 
 ### Functions
 
-| name                         | parameters                                       | Description                                                                                                                                                               |
-| ---------------------------- | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------ |
+| name | parameters |  Description | 
+| --- | --- | --- |
 | perfom.setfuncsToCompareSync | (arr: Array<any>, args: any,xValues::Array<any>) | arr: is array of sync functions to compare,args : args to use on the functions,as `args` may be a matrix the xValues parameter came to set bunch or Xvalues for the chart |
 | perfom.generateChart()       | NONE                                             | generate chart to visualize the result                                                                                                                                    | the chart publish in the file chartjs/index.html |
 | perf.start()                 | (name: string)                                   | name: the name of the performance instance to be started.                                                                                                                 |
