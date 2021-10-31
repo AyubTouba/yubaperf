@@ -55,3 +55,4 @@ console.log(perf.result("Algorithm1"));
 | perf.start()                 | (name: string)                                   | name: the name of the performance instance to be started.                                                                                                                 |
 | perf.end()                   | (name: string)                                   | name: the name of the performance to stop                                                                                                                                 |
 | perf.result()                | (name: string,parsed?: boolean)                  | name: the name of the performance to return the result,parsed (default=true): return a readable result on (nano,mils,second time) or returning a bigint resutl            |
+
