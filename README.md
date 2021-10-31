@@ -4,7 +4,12 @@
 
 ## Installation
 
----
+```sh
+npm i @youba/yubaperf
+# OR
+yarn add @youba/yubaperf
+```
+
 
 ## Usage
 
