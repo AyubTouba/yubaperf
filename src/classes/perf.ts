@@ -5,7 +5,7 @@ import { Measure } from "./measure";
     
     static measures:Array<Measure> = [];
 
-    static start(name:string){
+    static start(name:string) : Perf{
         if(!name) throw Error(ERR.NAME_NOT_FOUND);
 
         Perf.measures[name] = new Measure(name);
@@ -13,14 +13,14 @@ import { Measure } from "./measure";
         return Perf;
     }
 
-    static end(name:string) {
+    static end(name:string) : void {
         if(!name) throw Error(ERR.NAME_NOT_FOUND);
         if(!Perf.measures[name]) throw Error(ERR.NAME_NOT_EXIST);
 
         Perf.measures[name].end();
     }
 
-    static result(name:string,parsed:boolean=true) {
+    static result(name:string,parsed:boolean=true) : bigint | string {
         if(!name) throw Error(ERR.NAME_NOT_FOUND);
         if(!Perf.measures[name]) throw Error(ERR.NAME_NOT_EXIST);
 

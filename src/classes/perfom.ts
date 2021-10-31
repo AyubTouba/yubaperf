@@ -1,4 +1,4 @@
-import { ERR } from "../helper/consts";
+import { ERR, PATH_DATA_FILE } from "../helper/consts";
 import { writeInFileSync, getChartContent } from "../helper/fileAction";
 import { Measure } from "./measure";
 import { perf } from "./perf";
@@ -17,19 +17,18 @@ class Perfom {
      * @param  {Array<any>} xValues Optional field to set Xvalues for the chart
      * 
      */
-    static setfuncsToCompare(fncs,args,xValues=null) {
-        console.log("Setup Algorithms ...")
+    static setfuncsToCompareSync(fncs,args,xValues:Array<any>=null) : void  {
+       // console.log("Setup Algorithms ...")
         Perfom.prepareFunctions(fncs,args);
         
-        
         Perfom.xValues = xValues ? xValues : Perfom.getXvaluesFromArgs(args);
-        console.log("...Done...")
+       // console.log("...Done...")
     }
 
-    static getXvaluesFromArgs(args) {
-        return Array.isArray(args) ? args[0] : args
+    static getXvaluesFromArgs(args) : Array<any> {
+        return args.filter(Array.isArray).length ? args[0] : args
     }
-    static prepareFunctions(fncs,args) {
+    static prepareFunctions(fncs,args) : boolean | Error {
         // Check If fcns parameter is Array of Functions 
         if(Array.isArray(fncs)) {
             for(let fnc of fncs) {
@@ -41,10 +40,11 @@ class Perfom {
                 Perfom.labels.push(fnc.name);
                 Perfom.perfoms.push(measuring);
             }
+            return  true;
         }
        throw Error(ERR.DOESNT_PASS_ARRAY_OF_FUNCS);
     }
-    static execFunction(fnc,args){
+    static execFunction(fnc,args) : string | bigint{
         if(Array.isArray(args)) {
             perf.start(fnc.name);
            fnc(...args);
@@ -57,8 +57,8 @@ class Perfom {
         return perf.result(fnc.name,false);
     }
 
-    static generateChart() {
-        writeInFileSync(process.cwd()+'/chartjs/data.js',getChartContent(Perfom.perfoms, Perfom.xValues,Perfom.labels))
+    static generateChart() : void  {
+        writeInFileSync(PATH_DATA_FILE,getChartContent(Perfom.perfoms, Perfom.xValues,Perfom.labels))
     }
 }
 

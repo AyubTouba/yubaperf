@@ -3,11 +3,14 @@
   "author": "Ayoub touba <ayubtouba@gmail.com>",
   "license": "MIT",
   "readmeFilename": "README.md",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "YubaPerf Library is for measuring code,algorithm and comparing them",
   "main": "dist/index.js",
   "keywords": [
-    "yubaperf","performance","comparing alogrithms","measuring"
+    "yubaperf",
+    "performance",
+    "comparing alogrithms",
+    "measuring"
   ],
   "publishConfig": {
     "access": "public"
@@ -19,16 +22,19 @@
   "bugs": "https://github.com/AyubTouba/yubaperf",
   "scripts": {
     "start": "tsc && node dist/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build":"tsc"
   },
-
   "devDependencies": {
     "@types/node": "^16.7.1",
     "typescript": "^4.3.5"
   },
   "files": [
-    "chartjs/**/*",
+    "perf/**/*",
     "dist/**/*",
     "*.md"
-  ]
+  ],
+  "dependencies": {
+    "fs-extra": "^10.0.0"
+  },
+  "rootDir": "src"
 }
