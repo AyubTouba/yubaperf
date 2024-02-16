@@ -10,6 +10,7 @@ npm i @youba/yubaperf
 yarn add @youba/yubaperf
 ```
 
+
 ## Usage
 
 - Comparing two functions and generating the chart to visualize the result, the result located on /perf/index.html file
@@ -39,16 +40,16 @@ Perfom.generateChart();
 - Measure a function and return the result
 
 ```typescript
-perf.start("addUpToFirst");
+Perf.start("Algorithm1");
 addUpToFirst(17777);
-perf.end("addUpToFirst");
-console.log(perf.result("addUpToFirst"));
+Perf.end("Algorithm1");
+console.log(perf.result("Algorithm1"));
 ```
 
 ### Functions
 
-| name                         | parameters                                       | Description                                                                                                                                                               |
-| ---------------------------- | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------ |
+| name | parameters |  Description | 
+| --- | --- | --- |
 | perfom.setfuncsToCompareSync | (arr: Array<any>, args: any,xValues::Array<any>) | arr: is array of sync functions to compare,args : args to use on the functions,as `args` may be a matrix the xValues parameter came to set bunch or Xvalues for the chart |
 | perfom.generateChart()       | NONE                                             | generate chart to visualize the result                                                                                                                                    | the chart publish in the file chartjs/index.html |
 | perf.start()                 | (name: string)                                   | name: the name of the performance instance to be started.                                                                                                                 |
