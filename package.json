@@ -3,7 +3,7 @@
   "author": "Ayoub touba <ayubtouba@gmail.com>",
   "license": "MIT",
   "readmeFilename": "README.md",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "YubaPerf Library is for measuring code,algorithm and comparing them",
   "main": "dist/index.js",
   "keywords": [
@@ -22,7 +22,7 @@
   "bugs": "https://github.com/AyubTouba/yubaperf",
   "scripts": {
     "start": "tsc && node dist/index.js",
-    "build":"tsc"
+    "build": "tsc"
   },
   "devDependencies": {
     "@types/node": "^16.7.1",
